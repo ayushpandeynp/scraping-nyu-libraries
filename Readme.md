@@ -28,6 +28,6 @@ python scrape.py
 ```
 
 ## Runtime
-Each page, consisting of 20 scraped items, takes approximately 4 minutes to scrape. Therefore, total runtime for 1000 items (i.e. 50 pages) is 60.67 hours. And considering there are about 15k items, this is very very bad.
+Each page, consisting of 20 scraped items, takes approximately 4 minutes to scrape. Therefore, total runtime for 1000 items (i.e. 50 pages) is 3.33 hours. And considering there are about 15k items, ~50hrs is very very bad.
 
-So, I ran this on 5 Windows virtual machines on Microsoft Azure, each of which was scraping around 3500 items, so when they ran parallely, the scraping time was reduced to ~12 hours.
+So, I ran this parallely on 5 Windows virtual machines on Microsoft Azure, each of which was scraping around 3500 items, so the scraping time was reduced to ~12 hours.
