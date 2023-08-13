@@ -7,7 +7,7 @@ This repository contains the Python script and instructions for scraping data fr
 
 2. **NordVPN Executable Path**: Add the path to the NordVPN executable folder to the Environment Variables on Windows. This is necessary for the scraping scripts to interact with NordVPN.
 
-3. **NordVPN Split Tunneling**: Add Google Chrome to the NordVPN Split Tunneling list. If scraping is done on cloud, this makes sure that we can make RDP connections to the cloud instance without having to disconnect from the VPN. Also, enable the option to allow remote connections to the cloud instance while NordVPN is connected.
+3. **NordVPN Remote Connections**: Enable the option to allow remote access to the cloud instance while NordVPN is connected. Otherwise, you will be locked out of the cloud instance after connecting to NordVPN.
 
 4. **NYU Login Credentials**: Save your NYU Login credentials on Google Chrome. It is recommended to use this method for authentication instead of hardcoding credentials in Python, for security reasons.
 

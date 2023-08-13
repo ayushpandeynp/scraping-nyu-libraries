@@ -74,7 +74,7 @@ switched = False
 # chromedriver configs
 driver_path = './chromedriver.exe'
 username = "ayushpandeynp" # system username
-user_data_dir = "C:\\Users\\{username}\\AppData\\Local\\Google\\Chrome\\User Data" # this is for windows, won't run on mac or linux
+user_data_dir = f"C:\\Users\\{username}\\AppData\\Local\\Google\\Chrome\\User Data" # this is for windows, won't run on mac or linux
 profile_dir = 'Default' # this is the default profile dir for chrome
 
 chrome_options = webdriver.ChromeOptions()
@@ -180,6 +180,7 @@ try:
 
                 # create a dictionary to store the metadata
                 dct = dict.fromkeys([y(f) for f in fields])
+                dct["url"] = href
                 for i, text in enumerate(alltext):
                     if text.strip() in fields:
                         key = y(text)
