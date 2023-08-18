@@ -1,4 +1,5 @@
-bs4
 selenium
-pypdf2
+google-cloud-documentai
+beautifulsoup4
+google-api-core
 requests
