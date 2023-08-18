@@ -20,6 +20,8 @@ This repository contains the Python script and instructions for scraping data fr
     ```
 6. **ChromeDriver**: Download the ChromeDriver executable from [here](https://chromedriver.chromium.org/downloads) and replace the `chromedriver.exe` file based on the version of Chrome installed your system. This is necessary for the scraping scripts to interact with Google Chrome.
 
+7. **Google Cloud Document AI Setup**: Follow the instructions [here](https://cloud.google.com/sdk/docs/install) to set up Google Cloud CLI. And then follow this [link](https://codelabs.developers.google.com/codelabs/docai-ocr-python) to understand how Document AI Credentials and OCR Processor setup needs to be done. This is necessary to use OCR on the PDFs. **Don't forget to replace credential values in the scraping script.**.
+
 ## Usage
 Once all the prerequisites are met, you can run the scraping script by running the following command:
 
