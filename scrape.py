@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from google.api_core.client_options import ClientOptions
 from google.cloud import documentai  # type: ignore
+from split_pages import split_pages
 from typing import Optional
 from bs4 import BeautifulSoup
 import time
@@ -277,15 +278,20 @@ try:
                             f.write(response.content)
                             dct["filename"] = f"pdf{pdf_count}.pdf"
                             pdf_count += 1
+                        
+                        # Document OCR has a 15 page limit. To bypass this, we split the PDF into multiple PDFs, each with no more than 15 pages
+                        pdfs = split_pages(f"data/{dct['filename']}", 15)
 
-                        text = process_document_sample(
-                            PROJECT_ID,
-                            LOCATION,
-                            PROCESSOR_ID,
-                            f"data/{dct['filename']}",
-                            "application/pdf",
-                            "text",
-                        )
+                        text = ""
+                        for pdf in pdfs:
+                            text += process_document_sample(
+                                PROJECT_ID,
+                                LOCATION,
+                                PROCESSOR_ID,
+                                pdf,
+                                "application/pdf",
+                                "text",
+                            )
 
                         dct["full_text"] = text
 
